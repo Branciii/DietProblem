@@ -8,6 +8,9 @@ from kalkulator import kalkulator
 
 
 app = Flask(__name__)
+ 
+if __name__ == "__main__":
+  app.run()
 
 x = pd.read_excel("TablicaNamirnica.xlsx")
 

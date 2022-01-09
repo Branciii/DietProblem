@@ -150,6 +150,9 @@ def getResult():
     inputOption = request.form.get('option')
   
     n = len(checkedFoods)
+
+    if n < 2 :
+        return render_template("error.html")
    
     if inputOption == "custom":
 

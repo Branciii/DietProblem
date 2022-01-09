@@ -268,6 +268,7 @@ def getResult():
             B = np.eye(condNumb)
             B = B * np.array(slackVars)
             b = np.array(condVals)
+            
             print(condVals)
 
             A = np.zeros((condNumb,n+condNumb))
@@ -370,7 +371,9 @@ def getResult():
 
 
         elif userGoal == "3": # maksimizacija željeza
+
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Željezo"]]
+            
             c = np.array(c)
 
             if kalorije[0] != '3' and len(kalorije) == 2:
@@ -461,7 +464,7 @@ def getResult():
             print(lp.fun)
 
 
-        else: # minimiziramo Na
+        elif userGoal == "4": # minimiziramo Na
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Natrij"]]
             c = np.array(c)
 
@@ -554,6 +557,98 @@ def getResult():
             print(lp.x)
             print(lp.fun)
 
+        else: # minimizacija kolesterola 
+            c = x.loc[x["Naziv"].isin(checkedFoods)][["Kolesterol"]]
+            c = np.array(c)
+
+            if kalorije[0] != '3' and len(kalorije) == 2:
+                condNumb += 1
+                condVals.append(float(kalorije[1]))
+                slackVars.append(float(kalorije[0]))
+                condCols.append("Kalorije")
+
+            if proteini[0] != '3' and len(proteini) == 2:
+                condNumb += 1
+                condVals.append(float(proteini[1]))
+                slackVars.append(float(proteini[0]))
+                condCols.append("Proteini")
+
+            if ugljikohidrati[0] != '3' and len(ugljikohidrati) == 2:
+                condNumb += 1
+                condVals.append(float(ugljikohidrati[1]))
+                slackVars.append(float(ugljikohidrati[0]))
+                condCols.append("Ugljikohidrati")
+
+            if masti[0] != '3' and len(masti) == 2:
+                condNumb += 1
+                condVals.append(float(masti[1]))
+                slackVars.append(float(masti[0]))
+                condCols.append("Masti")
+
+            if kalij[0] != '3' and len(kalij) == 2:
+                condNumb += 1
+                condVals.append(float(kalij[1]))
+                slackVars.append(float(kalij[0]))
+                condCols.append("Kalij")
+
+            if vitaminc[0] != '3' and len(vitaminc) == 2:
+                condNumb += 1
+                condVals.append(float(vitaminc[1]))
+                slackVars.append(float(vitaminc[0]))
+                condCols.append("VitaminC")
+
+            if magnezij[0] != '3' and len(magnezij) == 2:
+                condNumb += 1
+                condVals.append(float(magnezij[1]))
+                slackVars.append(float(magnezij[0]))
+                condCols.append("Magnezij")
+
+            if natrij[0] != '3' and len(natrij) == 2:
+                condNumb += 1
+                condVals.append(float(natrij[1]))
+                slackVars.append(float(natrij[0]))
+                condCols.append("Natrij")
+
+            if cijena[0] != '3' and len(cijena) == 2:
+                condNumb += 1
+                condVals.append(float(cijena[1]))
+                slackVars.append(float(cijena[0]))
+                condCols.append("Cijena (kn)")
+
+            if zeljezo[0] != '3' and len(zeljezo) == 2:
+                condNumb += 1
+                condVals.append(float(zeljezo[1]))
+                slackVars.append(float(zeljezo[0]))
+                condCols.append("Željezo")
+
+            if kalcij[0] != '3' and len(kalcij) == 2:
+                condNumb += 1
+                condVals.append(float(kalcij[1]))
+                slackVars.append(float(kalcij[0]))
+                condCols.append("Kalcij")
+
+            condNumb += 1
+            condNumpy = np.zeros((condNumb,1))
+            condVals.append(1200.0)
+            condCols.append('Kalorije')
+            slackVars.append(-1)
+
+            c = np.concatenate((c, condNumpy)).T 
+            c = np.squeeze(c)
+            B = np.eye(condNumb)
+            B = B * np.array(slackVars)
+            b = np.array(condVals)
+
+            A = np.zeros((condNumb,n+condNumb))
+            for i in range(len(condCols)):
+                #print(B[i].shape)
+                #print(x.loc[x["Naziv"].isin(checkedFoods)][[condCols[i]]].shape)
+                A[i] = np.concatenate((np.squeeze(x.loc[x["Naziv"].isin(checkedFoods)][[condCols[i]]]), B[i]))
+            
+            lp = linprog(c, A_eq = A, b_eq = b)
+            
+            print(lp.x)
+            print(lp.fun)
 
     
     else: # po defaultu računanje 
@@ -605,7 +700,7 @@ def getResult():
         elif userGoal == "3" : # maksimizacija željeza
             b = [values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[8], values[10],1200]
             b = np.array(b)
-            condCols = ['Kalorije', 'Proteini', 'Ugljikohidrati', 'Masti', 'Kalij', 'VitaminC', 'Magnezij', 'Kolesterol', 'Natrij', 'Kalcij','Kalorije']
+            condCols = ['Kalorije', 'Proteini', 'Ugljikohidrati', 'Masti', 'Kalij', 'VitaminC', 'Magnezij', 'Kolesterol', 'Natrij', 'Kalcij', 'Kalorije']
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Željezo"]]
             c = np.array(c)
             condNumpy = np.zeros((len(condCols),1))
@@ -619,11 +714,28 @@ def getResult():
 
             lp = linprog(-c, A_eq = A, b_eq = b)
 
-        else : # minimizacija Na
+        elif userGoal == "4" : # minimizacija Na
             b = [values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[7], values[9], values[10], 1200]
             b = np.array(b)
             condCols = ['Kalorije', 'Proteini', 'Ugljikohidrati', 'Masti', 'Kalij', 'VitaminC', 'Magnezij', 'Kolesterol', 'Željezo', 'Kalcij','Kalorije']
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Natrij"]]
+            c = np.array(c)
+            condNumpy = np.zeros((len(condCols),1))
+            c = np.concatenate((c, condNumpy)).T 
+            c = np.squeeze(c)
+            A = np.zeros((len(condCols),n+len(condCols)))
+            B = np.eye(len(condCols))
+            B[B.shape[0]-1, B.shape[0]-1] = -1 
+            for i in range(len(condCols)):
+                A[i] = np.concatenate((np.squeeze(x.loc[x["Naziv"].isin(checkedFoods)][[condCols[i]]]), B[i]))
+            
+            lp = linprog(c, A_eq = A, b_eq = b)
+
+        else: # minimizacija kolesterola
+            b = [values[0], values[1], values[2], values[3], values[4], values[5], values[6], values[8], values[9], values[10], 1200]
+            b = np.array(b)
+            condCols = ['Kalorije', 'Proteini', 'Ugljikohidrati', 'Masti', 'Kalij', 'VitaminC', 'Magnezij','Natrij', 'Željezo', 'Kalcij','Kalorije']
+            c = x.loc[x["Naziv"].isin(checkedFoods)][["Kolesterol"]]
             c = np.array(c)
             condNumpy = np.zeros((len(condCols),1))
             c = np.concatenate((c, condNumpy)).T 

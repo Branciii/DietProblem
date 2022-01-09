@@ -31,6 +31,10 @@ function Custom() {
       var sol = document.getElementById("Sol");
         sol.style.display = "none";
     }
+    if(value == "5"){
+      var kol = document.getElementById("Kolesterol");
+        kol.style.display = "none";
+    }
     
   }
 

@@ -1,15 +1,9 @@
 #background{
     background-color: #f6f9fa;
     height: 700px;
-    width: 1580px;
+    width: 100%;
 }
 
-
-#motivacija_slika1{
-    width: 1580px;
-    height: 700px;
-    
-}
 
 #naslov{
     color:rgb(8, 8, 82); 
@@ -22,7 +16,7 @@
     background-color: #f1f1f1;
     position: absolute;
     top:600px;
-    width: 1580px;
+    width: 100%;
    
 }
 

@@ -166,6 +166,18 @@ def getResult():
         zeljezo = request.form.getlist('zeljezo')
         kalcij = request.form.getlist('kalcij')
 
+        print(cijena)
+        print(proteini)
+        print(ugljikohidrati)
+        print(masti)
+        print(kalij)
+        print(vitaminc)
+        print(magnezij)
+        print(kolesterol)
+        print(natrij)
+        print(zeljezo)
+        print(kalcij)
+
         condNumb = 0
         condVals = []
         slackVars = []
@@ -175,67 +187,67 @@ def getResult():
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Cijena (kn)"]]
             c = np.array(c)
 
-            if kalorije[0] != '3':
+            if kalorije[0] != '3' and len(kalorije) == 2:
                 condNumb += 1
                 condVals.append(float(kalorije[1]))
                 slackVars.append(float(kalorije[0]))
                 condCols.append("Kalorije")
 
-            if proteini[0] != '3':
+            if proteini[0] != '3' and len(proteini) == 2:
                 condNumb += 1
                 condVals.append(float(proteini[1]))
                 slackVars.append(float(proteini[0]))
                 condCols.append("Proteini")
 
-            if ugljikohidrati[0] != '3':
+            if ugljikohidrati[0] != '3' and len(ugljikohidrati) == 2:
                 condNumb += 1
                 condVals.append(float(ugljikohidrati[1]))
                 slackVars.append(float(ugljikohidrati[0]))
                 condCols.append("Ugljikohidrati")
 
-            if masti[0] != '3':
+            if masti[0] != '3' and len(masti) == 2:
                 condNumb += 1
                 condVals.append(float(masti[1]))
                 slackVars.append(float(masti[0]))
                 condCols.append("Masti")
 
-            if kalij[0] != '3':
+            if kalij[0] != '3' and len(kalij) == 2:
                 condNumb += 1
                 condVals.append(float(kalij[1]))
                 slackVars.append(float(kalij[0]))
                 condCols.append("Kalij")
 
-            if vitaminc[0] != '3':
+            if vitaminc[0] != '3' and len(vitaminc) == 2:
                 condNumb += 1
                 condVals.append(float(vitaminc[1]))
                 slackVars.append(float(vitaminc[0]))
                 condCols.append("VitaminC")
 
-            if magnezij[0] != '3':
+            if magnezij[0] != '3' and len(magnezij) == 2:
                 condNumb += 1
                 condVals.append(float(magnezij[1]))
                 slackVars.append(float(magnezij[0]))
                 condCols.append("Magnezij")
 
-            if kolesterol[0] != '3':
+            if kolesterol[0] != '3' and len(kolesterol) == 2:
                 condNumb += 1
                 condVals.append(float(kolesterol[1]))
                 slackVars.append(float(kolesterol[0]))
                 condCols.append("Kolesterol")
 
-            if natrij[0] != '3':
+            if natrij[0] != '3' and len(natrij) == 2:
                 condNumb += 1
                 condVals.append(float(natrij[1]))
                 slackVars.append(float(natrij[0]))
                 condCols.append("Natrij")
 
-            if zeljezo[0] != '3':
+            if zeljezo[0] != '3' and len(zeljezo) == 2:
                 condNumb += 1
                 condVals.append(float(zeljezo[1]))
                 slackVars.append(float(zeljezo[0]))
                 condCols.append("Željezo")
 
-            if kalcij[0] != '3':
+            if kalcij[0] != '3' and len(kalcij) == 2:
                 print("condition is different than 3")
                 condNumb += 1
                 condVals.append(float(kalcij[1]))
@@ -267,67 +279,67 @@ def getResult():
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Kalorije"]]
             c = np.array(c)
 
-            if cijena[0] != '3':
+            if cijena[0] != '3' and len(cijena) == 2:
                 condNumb += 1
                 condVals.append(float(cijena[1]))
                 slackVars.append(float(cijena[0]))
                 condCols.append("Cijena (kn)")
 
-            if proteini[0] != '3':
+            if proteini[0] != '3' and len(proteini) == 2:
                 condNumb += 1
                 condVals.append(float(proteini[1]))
                 slackVars.append(float(proteini[0]))
                 condCols.append("Proteini")
 
-            if ugljikohidrati[0] != '3':
+            if ugljikohidrati[0] != '3' and len(ugljikohidrati) == 2:
                 condNumb += 1
                 condVals.append(float(ugljikohidrati[1]))
                 slackVars.append(float(ugljikohidrati[0]))
                 condCols.append("Ugljikohidrati")
 
-            if masti[0] != '3':
+            if masti[0] != '3' and len(masti) == 2:
                 condNumb += 1
                 condVals.append(float(masti[1]))
                 slackVars.append(float(masti[0]))
                 condCols.append("Masti")
 
-            if kalij[0] != '3':
+            if kalij[0] != '3' and len(kalij) == 2:
                 condNumb += 1
                 condVals.append(float(kalij[1]))
                 slackVars.append(float(kalij[0]))
                 condCols.append("Kalij")
 
-            if vitaminc[0] != '3':
+            if vitaminc[0] != '3' and len(vitaminc) == 2:
                 condNumb += 1
                 condVals.append(float(vitaminc[1]))
                 slackVars.append(float(vitaminc[0]))
                 condCols.append("VitaminC")
 
-            if magnezij[0] != '3':
+            if magnezij[0] != '3' and len(magnezij) == 2:
                 condNumb += 1
                 condVals.append(float(magnezij[1]))
                 slackVars.append(float(magnezij[0]))
                 condCols.append("Magnezij")
 
-            if kolesterol[0] != '3':
+            if kolesterol[0] != '3' and len(kolesterol) == 2:
                 condNumb += 1
                 condVals.append(float(kolesterol[1]))
                 slackVars.append(float(kolesterol[0]))
                 condCols.append("Kolesterol")
 
-            if natrij[0] != '3':
+            if natrij[0] != '3' and len(natrij) == 2:
                 condNumb += 1
                 condVals.append(float(natrij[1]))
                 slackVars.append(float(natrij[0]))
                 condCols.append("Natrij")
 
-            if zeljezo[0] != '3':
+            if zeljezo[0] != '3' and len(zeljezo) == 2:
                 condNumb += 1
                 condVals.append(float(zeljezo[1]))
                 slackVars.append(float(zeljezo[0]))
                 condCols.append("Željezo")
 
-            if kalcij[0] != '3':
+            if kalcij[0] != '3' and len(kalcij) == 2:
                 condNumb += 1
                 condVals.append(float(kalcij[1]))
                 slackVars.append(float(kalcij[0]))
@@ -358,67 +370,67 @@ def getResult():
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Željezo"]]
             c = np.array(c)
 
-            if kalorije[0] != '3':
+            if kalorije[0] != '3' and len(kalorije) == 2:
                 condNumb += 1
                 condVals.append(float(kalorije[1]))
                 slackVars.append(float(kalorije[0]))
                 condCols.append("Kalorije")
 
-            if proteini[0] != '3':
+            if proteini[0] != '3' and len(proteini) == 2:
                 condNumb += 1
                 condVals.append(float(proteini[1]))
                 slackVars.append(float(proteini[0]))
                 condCols.append("Proteini")
 
-            if ugljikohidrati[0] != '3':
+            if ugljikohidrati[0] != '3' and len(ugljikohidrati) == 2:
                 condNumb += 1
                 condVals.append(float(ugljikohidrati[1]))
                 slackVars.append(float(ugljikohidrati[0]))
                 condCols.append("Ugljikohidrati")
 
-            if masti[0] != '3':
+            if masti[0] != '3' and len(masti) == 2:
                 condNumb += 1
                 condVals.append(float(masti[1]))
                 slackVars.append(float(masti[0]))
                 condCols.append("Masti")
 
-            if kalij[0] != '3':
+            if kalij[0] != '3' and len(kalij) == 2:
                 condNumb += 1
                 condVals.append(float(kalij[1]))
                 slackVars.append(float(kalij[0]))
                 condCols.append("Kalij")
 
-            if vitaminc[0] != '3':
+            if vitaminc[0] != '3' and len(vitaminc) == 2:
                 condNumb += 1
                 condVals.append(float(vitaminc[1]))
                 slackVars.append(float(vitaminc[0]))
                 condCols.append("VitaminC")
 
-            if magnezij[0] != '3':
+            if magnezij[0] != '3' and len(magnezij) == 2:
                 condNumb += 1
                 condVals.append(float(magnezij[1]))
                 slackVars.append(float(magnezij[0]))
                 condCols.append("Magnezij")
 
-            if kolesterol[0] != '3':
+            if kolesterol[0] != '3' and len(kolesterol) == 2:
                 condNumb += 1
                 condVals.append(float(kolesterol[1]))
                 slackVars.append(float(kolesterol[0]))
                 condCols.append("Kolesterol")
 
-            if natrij[0] != '3':
+            if natrij[0] != '3' and len(natrij) == 2:
                 condNumb += 1
                 condVals.append(float(natrij[1]))
                 slackVars.append(float(natrij[0]))
                 condCols.append("Natrij")
 
-            if cijena[0] != '3':
+            if cijena[0] != '3' and len(cijena) == 2:
                 condNumb += 1
                 condVals.append(float(cijena[1]))
                 slackVars.append(float(cijena[0]))
                 condCols.append("Cijena (kn)")
 
-            if kalcij[0] != '3':
+            if kalcij[0] != '3' and len(kalcij) == 2:
                 print("condition is different than 3")
                 condNumb += 1
                 condVals.append(float(kalcij[1]))
@@ -450,67 +462,67 @@ def getResult():
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Natrij"]]
             c = np.array(c)
 
-            if kalorije[0] != '3':
+            if kalorije[0] != '3' and len(kalorije) == 2:
                 condNumb += 1
                 condVals.append(float(kalorije[1]))
                 slackVars.append(float(kalorije[0]))
                 condCols.append("Kalorije")
 
-            if proteini[0] != '3':
+            if proteini[0] != '3' and len(proteini) == 2:
                 condNumb += 1
                 condVals.append(float(proteini[1]))
                 slackVars.append(float(proteini[0]))
                 condCols.append("Proteini")
 
-            if ugljikohidrati[0] != '3':
+            if ugljikohidrati[0] != '3' and len(ugljikohidrati) == 2:
                 condNumb += 1
                 condVals.append(float(ugljikohidrati[1]))
                 slackVars.append(float(ugljikohidrati[0]))
                 condCols.append("Ugljikohidrati")
 
-            if masti[0] != '3':
+            if masti[0] != '3' and len(masti) == 2:
                 condNumb += 1
                 condVals.append(float(masti[1]))
                 slackVars.append(float(masti[0]))
                 condCols.append("Masti")
 
-            if kalij[0] != '3':
+            if kalij[0] != '3' and len(kalij) == 2:
                 condNumb += 1
                 condVals.append(float(kalij[1]))
                 slackVars.append(float(kalij[0]))
                 condCols.append("Kalij")
 
-            if vitaminc[0] != '3':
+            if vitaminc[0] != '3' and len(vitaminc) == 2:
                 condNumb += 1
                 condVals.append(float(vitaminc[1]))
                 slackVars.append(float(vitaminc[0]))
                 condCols.append("VitaminC")
 
-            if magnezij[0] != '3':
+            if magnezij[0] != '3' and len(magnezij) == 2:
                 condNumb += 1
                 condVals.append(float(magnezij[1]))
                 slackVars.append(float(magnezij[0]))
                 condCols.append("Magnezij")
 
-            if kolesterol[0] != '3':
+            if kolesterol[0] != '3' and len(kolesterol) == 2:
                 condNumb += 1
                 condVals.append(float(kolesterol[1]))
                 slackVars.append(float(kolesterol[0]))
                 condCols.append("Kolesterol")
 
-            if cijena[0] != '3':
+            if cijena[0] != '3' and len(cijena) == 2:
                 condNumb += 1
                 condVals.append(float(cijena[1]))
                 slackVars.append(float(cijena[0]))
                 condCols.append("Cijena (kn)")
 
-            if zeljezo[0] != '3':
+            if zeljezo[0] != '3' and len(zeljezo) == 2:
                 condNumb += 1
                 condVals.append(float(zeljezo[1]))
                 slackVars.append(float(zeljezo[0]))
                 condCols.append("Željezo")
 
-            if kalcij[0] != '3':
+            if kalcij[0] != '3' and len(kalcij) == 2:
                 condNumb += 1
                 condVals.append(float(kalcij[1]))
                 slackVars.append(float(kalcij[0]))

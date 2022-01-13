@@ -163,6 +163,9 @@ def getResult():
     checkedFoods = request.form.getlist('check')
     inputOption = request.form.get('option')
   
+    if ~(userGoal in [1,2,3,4,5]):
+        return render_template("error.html")
+
     n = len(checkedFoods)
 
     if n < 2 :
@@ -665,7 +668,7 @@ def getResult():
             print(lp.fun)
 
     
-    else: # po defaultu računanje 
+    elif inputOption == "default": # po defaultu računanje 
         spol = request.form.get('spol')
         tezina = request.form.get('tezina')
         godine = request.form.get('godine')
@@ -761,6 +764,9 @@ def getResult():
                 A[i] = np.concatenate((np.squeeze(x.loc[x["Naziv"].isin(checkedFoods)][[condCols[i]]]), B[i]))
             
             lp = linprog(c, A_eq = A, b_eq = b)
+
+    else:
+        return render_template("error.html")
     
     if lp.status != 0:
         return render_template("error.html")

@@ -162,9 +162,6 @@ def getResult():
     userGoal = request.form.get('goalPick')
     checkedFoods = request.form.getlist('check')
     inputOption = request.form.get('option')
-  
-    if ~(userGoal in ["1","2","3","4","5"]):
-        return render_template("error.html")
 
     n = len(checkedFoods)
 
@@ -574,7 +571,7 @@ def getResult():
             print(lp.x)
             print(lp.fun)
 
-        else: # minimizacija kolesterola 
+        elif userGoal == "5": # minimizacija kolesterola 
             c = x.loc[x["Naziv"].isin(checkedFoods)][["Kolesterol"]]
             c = np.array(c)
 
@@ -666,6 +663,9 @@ def getResult():
             
             print(lp.x)
             print(lp.fun)
+        
+        else: #cilj nije unešen
+            return render_template("error.html")
 
     
     elif inputOption == "default": # po defaultu računanje 

@@ -21,7 +21,7 @@
 #tekst1{
     position: absolute;
     top:40%;
-    left: 20%;
+    left: 10%;
     text-align: center;
     display: none;
     animation-name: example;
@@ -52,7 +52,7 @@
 #listaMotivacije{
     font-size: 28px;
     padding-top: 25px;
-    padding-left: 80px;
+    padding-left: 5%;
     list-style-type: none;
 }
 

@@ -43,7 +43,7 @@ tuples = [tuple(y) for y in x.to_numpy()]
 
 @app.route('/')
 def index():
-    return render_template('index.html', data = [categories, meats, fish, eggs, dairy, vegetables, grains, fruit, nuts, seeds, snacks ,tuples])
+    return render_template('index.html')
 
 @app.route('/callIndex')
 def callIndex():
@@ -56,6 +56,7 @@ def callOnama():
 @app.route('/callKatalog')
 def callKatalog():
     meats = x.loc[x["Kategorija"] == "MESO"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    meats["Cijena (kn)"] = ["%.2f" % round(p,2) for p in meats["Cijena (kn)"]]
     meats = [tuple(y) for y in meats.to_numpy()]
     meats = iter(meats)
     meats = [list(islice(meats, elem)) for elem in [4,4,4,4,4,1]]
@@ -65,6 +66,7 @@ def callKatalog():
 @app.route('/callRiba')
 def callRiba():
     fish = x.loc[x["Kategorija"] == "RIBA"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    fish["Cijena (kn)"] = ["%.2f" % round(p,2) for p in fish["Cijena (kn)"]]
     fish = [tuple(y) for y in fish.to_numpy()]
     fish = iter(fish)
     fish = [list(islice(fish, elem)) for elem in [4,4,4,4,4,4,1]]
@@ -73,6 +75,7 @@ def callRiba():
 @app.route('/callPovrce')
 def callPovrce():
     vegetables = x.loc[x["Kategorija"] == "POVRĆE"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    vegetables["Cijena (kn)"] = ["%.2f" % round(p,2) for p in vegetables["Cijena (kn)"]]
     vegetables = [tuple(y) for y in vegetables.to_numpy()]
     vegetables = iter(vegetables)
     vegetables = [list(islice(vegetables, elem)) for elem in [4,4,4,4,4,4,4,4,4,2]]
@@ -81,6 +84,7 @@ def callPovrce():
 @app.route('/callJaja')
 def callJaja():
     eggs = x.loc[x["Kategorija"] == "JAJA"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    eggs["Cijena (kn)"] = ["%.2f" % round(p,2) for p in eggs["Cijena (kn)"]]
     eggs = [tuple(y) for y in eggs.to_numpy()]
     eggs = iter(eggs)
     eggs = [list(islice(eggs, elem)) for elem in [4,3]]
@@ -89,6 +93,7 @@ def callJaja():
 @app.route('/callZitarice')
 def callZitarice():
     grains = x.loc[x["Kategorija"] == "ŽITARICE"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    grains["Cijena (kn)"] = ["%.2f" % round(p,2) for p in grains["Cijena (kn)"]]
     grains = [tuple(y) for y in grains.to_numpy()]
     grains = iter(grains)
     grains = [list(islice(grains, elem)) for elem in [4,4,4,4,4,4,4,2]]
@@ -99,6 +104,7 @@ def callZitarice():
 @app.route('/callSjemenke')
 def callSjemenke():
     seeds = x.loc[x["Kategorija"] == "SJEMENKE"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    seeds["Cijena (kn)"] = ["%.2f" % round(p,2) for p in seeds["Cijena (kn)"]]
     seeds = [tuple(y) for y in seeds.to_numpy()]
     seeds = iter(seeds)
     seeds = [list(islice(seeds, elem)) for elem in [4,1]]
@@ -107,6 +113,7 @@ def callSjemenke():
 @app.route('/callOrasasti')
 def callOrasasti():
     nuts = x.loc[x["Kategorija"] == "ORAŠASTI PLODOVI"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    nuts["Cijena (kn)"] = ["%.2f" % round(p,2) for p in nuts["Cijena (kn)"]]
     nuts = [tuple(y) for y in nuts.to_numpy()]
     nuts = iter(nuts)
     nuts = [list(islice(nuts, elem)) for elem in [4,2]]
@@ -115,6 +122,7 @@ def callOrasasti():
 @app.route('/callVoce')
 def callVoce():
     fruit = x.loc[x["Kategorija"] == "VOĆE"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    fruit["Cijena (kn)"] = ["%.2f" % round(p,2) for p in fruit["Cijena (kn)"]]
     fruit = [tuple(y) for y in fruit.to_numpy()]
     fruit = iter(fruit)
     fruit = [list(islice(fruit, elem)) for elem in [4,4,4,4,4,4,4,4,4]]
@@ -123,6 +131,7 @@ def callVoce():
 @app.route('/callMlPro')
 def callMlPro():
     dairy = x.loc[x["Kategorija"] == "MLIJEČNI PROIZVODI"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    dairy["Cijena (kn)"] = ["%.2f" % round(p,2) for p in dairy["Cijena (kn)"]]
     dairy = [tuple(y) for y in dairy.to_numpy()]
     dairy = iter(dairy)
     dairy = [list(islice(dairy, elem)) for elem in [4,4,4,4,4,4,4,4]]
@@ -131,6 +140,7 @@ def callMlPro():
 @app.route('/callGrickalice')
 def callGrickalice():
     snacks = x.loc[x["Kategorija"] == "SLATKIŠI/SLANIŠI"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]
+    snacks["Cijena (kn)"] = ["%.2f" % round(p,2) for p in snacks["Cijena (kn)"]]
     snacks = [tuple(y) for y in snacks.to_numpy()]
     snacks = iter(snacks)
     snacks = [list(islice(snacks, elem)) for elem in [4,4,4,4,4,4,1]]

@@ -163,8 +163,7 @@ def getResult():
     checkedFoods = request.form.getlist('check')
     inputOption = request.form.get('option')
   
-    if ~(userGoal in [1,2,3,4,5]):
-        return render_template("error.html")
+
 
     n = len(checkedFoods)
 

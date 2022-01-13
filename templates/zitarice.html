@@ -12,25 +12,27 @@
 <body>
     <div id="background">
         <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{url_for('callIndex')}}"><img src="{{url_for('static', filename='slike/logo.PNG')}}" style="height: 40px; width: 300px;" alt="logo"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Menu
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="{{url_for('callIndex')}}">Početna</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callCalculator')}}">Napravi plan</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callKatalog')}}">Katalog namirnica</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callOnama')}}" >O nama</a></li>
-                    </ul>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('callIndex')}}">Početna <span class="sr-only">(current)</span></a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callCalculator')}}">Napravi plan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callKatalog')}}">Katalog namirnica</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callOnama')}}">O projektu</a>
+                  </li>
+    
                 </ul>
               </div>
             </div>
@@ -79,6 +81,7 @@
                                               <h4 class="card-title"> {{data[6][0][0][0]}}</h4>
                                               <h6>Kalorije:  {{data[6][0][0][1]}} </h6>
                                               <h6>Cijena:  {{data[6][0][0][13]}} kn</h6>
+                                              <h6>Količina: 100g </h6>
                                               <p class="card-text">
                                                 <div class="accordion" id="accordionExample">
                                                   <div class="accordion-item">
@@ -114,7 +117,7 @@
                                                          <li>Željezo: {{data[6][0][0][10]}}  mg</li>
                                                          <li>Kalcij: {{data[6][0][0][11]}} mg</li>
                                                        </ul>
-                                                       <small>100g</small>
+                                                       
                                                       </div>
                                                     </div>
                                                   </div>
@@ -132,6 +135,7 @@
                                               <h4 class="card-title">{{data[6][0][1][0]}}</h4>
                                               <h6>Kalorije:  {{data[6][0][1][1]}}</h6>
                                               <h6>Cijena:  {{data[6][0][1][13]}} kn</h6>
+                                              <h6>Količina: 100g </h6>
                                               <p class="card-text">
                                                 <div class="accordion" id="accordionExample">
                                                   <div class="accordion-item">
@@ -167,7 +171,7 @@
                                                          <li>Željezo: {{data[6][0][1][10]}} mg</li>
                                                          <li>Kalcij: {{data[6][0][1][11]}} mg</li>
                                                        </ul>
-                                                       <small>100g</small>
+                                                       
                                                       </div>
                                                     </div>
                                                   </div>
@@ -184,6 +188,7 @@
                                               <h4 class="card-title">{{data[6][0][2][0]}}</h4>
                                               <h6>Kalorije: {{data[6][0][2][1]}} </h6>
                                               <h6>Cijena:  {{data[6][0][2][13]}} kn</h6>
+                                              <h6>Količina: 100g </h6>
                                               <p class="card-text">
                                                 <div class="accordion" id="accordionExample">
                                                   <div class="accordion-item">
@@ -219,7 +224,7 @@
                                                          <li>Željezo: {{data[6][0][2][10]}} mg</li>
                                                          <li>Kalcij: {{data[6][0][2][11]}} mg</li>
                                                        </ul>
-                                                       <small>100g</small>
+                                                       
                                                       </div>
                                                     </div>
                                                   </div>
@@ -236,6 +241,7 @@
                                             <h4 class="card-title">{{data[6][0][3][0]}}</h4>
                                             <h6>Kalorije: {{data[6][0][3][1]}} </h6>
                                             <h6>Cijena:  {{data[6][0][3][13]}} kn</h6>
+                                            <h6>Količina: 100g </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -271,7 +277,7 @@
                                                        <li>Željezo: {{data[6][0][3][10]}} mg</li>
                                                        <li>Kalcij: {{data[6][0][3][11]}} mg</li>
                                                      </ul>
-                                                     <small>100g</small>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -295,6 +301,7 @@
                                             <h4 class="card-title"> {{data[6][loop.index][0][0]}}</h4>
                                             <h6>Kalorije:  {{data[6][loop.index][0][1]}} </h6>
                                             <h6>Cijena:  {{data[6][loop.index][0][13]}} kn</h6>
+                                            <h6>Količina: 100g </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -330,7 +337,7 @@
                                                        <li>Željezo: {{data[6][loop.index][0][10]}}  mg</li>
                                                        <li>Kalcij: {{data[6][loop.index][0][11]}} mg</li>
                                                      </ul>
-                                                     <small>100g</small>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -348,6 +355,7 @@
                                             <h4 class="card-title">{{data[6][loop.index][1][0]}}</h4>
                                             <h6>Kalorije:  {{data[6][loop.index][1][1]}}</h6>
                                             <h6>Cijena:  {{data[6][loop.index][1][13]}} kn</h6>
+                                            <h6>Količina: 100g </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -383,7 +391,7 @@
                                                        <li>Željezo: {{data[6][loop.index][1][10]}} mg</li>
                                                        <li>Kalcij: {{data[6][loop.index][1][11]}} mg</li>
                                                      </ul>
-                                                     <small>100g</small>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -400,6 +408,7 @@
                                             <h4 class="card-title">{{data[6][loop.index][2][0]}}</h4>
                                             <h6>Kalorije: {{data[6][loop.index][2][1]}} </h6>
                                             <h6>Cijena:  {{data[6][loop.index][2][13]}} kn</h6>
+                                            <h6>Količina: 100g </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -435,7 +444,7 @@
                                                        <li>Željezo: {{data[6][loop.index][2][10]}} mg</li>
                                                        <li>Kalcij: {{data[6][loop.index][2][11]}} mg</li>
                                                      </ul>
-                                                     <small>100g</small>
+                                                     
                                                     </div>
                                                   </div>
                                                 </div>
@@ -452,6 +461,7 @@
                                           <h4 class="card-title">{{data[6][loop.index][3][0]}}</h4>
                                           <h6>Kalorije: {{data[6][loop.index][3][1]}} </h6>
                                           <h6>Cijena:  {{data[6][loop.index][3][13]}} kn</h6>
+                                          <h6>Količina: 100g </h6>
                                           <p class="card-text">
                                             <div class="accordion" id="accordionExample">
                                               <div class="accordion-item">
@@ -487,7 +497,7 @@
                                                      <li>Željezo: {{data[6][loop.index][3][10]}} mg</li>
                                                      <li>Kalcij: {{data[6][loop.index][3][11]}} mg</li>
                                                    </ul>
-                                                   <small>100g</small>
+                                                   
                                                   </div>
                                                 </div>
                                               </div>
@@ -511,6 +521,7 @@
                                           <h4 class="card-title"> {{data[6][7][0][0]}}</h4>
                                           <h6>Kalorije:  {{data[6][7][0][1]}} </h6>
                                           <h6>Cijena:  {{data[6][7][0][13]}} kn</h6>
+                                          <h6>Količina: 100g </h6>
                                           <p class="card-text">
                                             <div class="accordion" id="accordionExample">
                                               <div class="accordion-item">
@@ -546,7 +557,7 @@
                                                      <li>Željezo: {{data[6][7][0][10]}}  mg</li>
                                                      <li>Kalcij: {{data[6][7][0][11]}} mg</li>
                                                    </ul>
-                                                   <small>100g</small>
+                                                   
                                                   </div>
                                                 </div>
                                               </div>
@@ -564,6 +575,7 @@
                                         <h4 class="card-title"> {{data[6][7][1][0]}}</h4>
                                         <h6>Kalorije:  {{data[6][7][1][1]}} </h6>
                                         <h6>Cijena:  {{data[6][7][1][13]}} kn</h6>
+                                        <h6>Količina: 100g </h6>
                                         <p class="card-text">
                                           <div class="accordion" id="accordionExample">
                                             <div class="accordion-item">
@@ -599,7 +611,7 @@
                                                    <li>Željezo: {{data[6][7][1][10]}}  mg</li>
                                                    <li>Kalcij: {{data[6][7][1][11]}} mg</li>
                                                  </ul>
-                                                 <small>100g</small>
+                                                 
                                                 </div>
                                               </div>
                                             </div>

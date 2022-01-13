@@ -12,7 +12,7 @@
 <body onload="UcitajNaslov()"> 
     <div id="background">
         <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{url_for('callIndex')}}"><img src="{{url_for('static', filename='slike/logo.PNG')}}" style="height: 40px; width: 300px;" alt="logo"></a>
               <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,17 +20,19 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Menu
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="{{url_for('callIndex')}}" >Početna</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callCalculator')}}" >Napravi plan</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callKatalog')}}" >Katalog namirnica</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callOnama')}}" >O nama</a></li>
-                    </ul>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('callIndex')}}">Početna <span class="sr-only">(current)</span></a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callCalculator')}}">Napravi plan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callKatalog')}}">Katalog namirnica</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callOnama')}}">O projektu</a>
+                  </li>
+    
                 </ul>
               </div>
             </div>
@@ -39,16 +41,14 @@
 
           <div>
               <h1 style="padding-top: 50px; padding-bottom: 20px; color: darkblue;">O projektu</h1>
-            <p style="font-size: 25px;">
-                Healthy Optimization je projekt nastao u sklopu kolegija Linearna optimizacija, pod mentorstvom profesorice <br> doc. dr. sc. Ivane Kuzmanović Ivičić. 
-                Projekt su dizajnirale i implementirale studentice 2. godine diplomskog studija Matematike i računarstva:
-                Katarina Kopić, Branka Miholek i Magdalena Nedić. <br> 
-                Cilj projekta je izgraditi matematički model te pomoću metoda linearnog programiranja, tj. Simplex metode,
-                riješiti problem optimizacije prehrane. U sklopu projekta implementiran je i kalkulator
-                za izračunavanje defaultnih vrijednosti dnevnog unosa kalorija i nutrijenata. 
-                Osmišljen je kako bi korisniku omogućio optimiziranje (maksimizaciju ili
-                minimizaciju) značajki koje su mu bitne (npr. cijena, kalorije, željezo, itd.) na temelju odabranih namirnica i 
-                vlastitih preferencija.
+            <p style="font-size: 25px; text-align:justify;">
+              Healthy Optimization je projekt nastao u sklopu kolegija Linearna optimizacija koji se izvodi na 2. godini diplomskih studija Matematika i računarstvo i Financijska matematika i statistika na Odjelu za matematiku Sveučilišta J. J. Strossmayera u Osijeku . Projekt su pod mentorstvom
+              doc. dr. sc. Ivane Kuzmanović Ivičić dizajnirale i implementirale studentice 2. godine diplomskog studija Matematike i računarstva: Katarina Kopić, Branka Miholek i Magdalena Nedić.
+              <br> <br>
+              Cilj projekta je konstruirati sustav koji omogućava izradu personaliziranog optimalnog plana prehrane koristeći linearno programiranje.
+               Personalizirani matematički model  konstruira se obzirom na parametre koje zadaje korisnik (primjerice, cilj  koji želi ostvariti planom prehrane, namirnice koje preferira u svojoj prehrani, cijena obroka, minimalne ili maksimalne količine pojedinih makronutrijenata itd.).  Nakon konstrukcije personaliziranog modela u obliku problema linearnog programiranja, pristupa se njegovom rješavanju  pomoću Simpleks metode.  Dobiveno rješenje se interpretira u terminima ulaznih parametara te korisnik dobiva optimalni plan prehrane u obliku namirnica i količina koje treba konzumirati.
+              U sklopu projekta omogućena je i dodatna personalizacija pri odabiru parametara jer je implementiran  i kalkulator za izračunavanje personaliziranih vrijednosti dnevnog unosa kalorija i nutrijenata.
+              Projekt je inspiriran sličnim starijim projektom  Diet Problem (<a href="https://www.zweigmedia.com/RealWorld/dietProblem/diet.html?fbclid=IwAR2J-kDtRMgcI5hZMWYvngEcnH8wkFrawQg0q1CX-MzvyJoPGnTmNiv0_SE">zweigmedia.com</a>), no još je značajno proširen i  moderniziran.
             </p>
             <div style="padding-top: 100px;">
             <button type="button" class="btn btn-primary  btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">

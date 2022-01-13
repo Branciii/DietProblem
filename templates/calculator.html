@@ -18,25 +18,27 @@
 <body>
     <div id="background">
         <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{url_for('callIndex')}}"><img src="{{url_for('static', filename='slike/logo.PNG')}}" style="height: 40px; width: 300px;" alt="logo"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Menu
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="{{url_for('callIndex')}}">Početna</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callCalculator')}}">Napravi plan</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callKatalog')}}">Katalog namirnica</a></li>
-                      <li><a class="dropdown-item" href="{{url_for('callOnama')}}" >O nama</a></li>
-                    </ul>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('callIndex')}}">Početna <span class="sr-only">(current)</span></a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callCalculator')}}">Napravi plan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callKatalog')}}">Katalog namirnica</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('callOnama')}}">O projektu</a>
+                  </li>
+    
                 </ul>
               </div>
             </div>

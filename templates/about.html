@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Diet problem</title>
@@ -35,52 +35,62 @@
               </div>
             </div>
           </nav>
-        </div>
 
-        <div id="blok1">
-            <div id="tekst1">
-                <h1 id="naslov"> Do optimalnog plana prehrane <br> uz linearno programiranje! </h1> 
-            </div>
-            <div id="slika1">
-                <img id="motivacija_slika1" src="{{url_for('static', filename='slike/slika6.jpg')}}" alt="motivation diet">
-            </div>
-        </div>
-
-
-
-        <div id="about">
 
           <div>
-            <h2 id="NaslovMotivacija"> <b> Što nudimo? </b></h2>
-            <p>
-              <ul id="listaMotivacije">
-                <li style="padding-top: 15px;"> <i class="fa fa-check"></i> <b> Kreirajte optimalan plan prehrane po svojim željama i mogućnostima</b> </li>
-                <li style="padding-top: 15px;"> <i class="fa fa-check"></i> <b> Istražite nutritivne vrijednosti namirnica </b></li>
-                <li style="padding-top: 15px;"> <i class="fa fa-check"></i> <b> Proučite problem Linearnog programiranja na osnovu kojeg <br> kreiramo Vaš optimalan plan </b></li>
-                <li style="padding-top: 15px;"> <i class="fa fa-check"></i> <b> Pronađite ideje i recepte za ukusne i zdrave obroke </b></li>
-              </ul>
+              <h1 style="padding-top: 50px; padding-bottom: 20px; color: darkblue;">O projektu</h1>
+            <p style="font-size: 25px;">
+                Healthy Optimization je projekt nastao u sklopu kolegija Linearna optimizacija, pod mentorstvom profesorice <br> doc. dr. sc. Ivane Kuzmanović Ivičić. 
+                Projekt su dizajnirale i implementirale studentice 2. godine diplomskog studija Matematike i računarstva:
+                Katarina Kopić, Branka Miholek i Magdalena Nedić. <br> 
+                Cilj projekta je izgraditi matematički model te pomoću metoda linearnog programiranja, tj. Simplex metode,
+                riješiti problem optimizacije prehrane. U sklopu projekta implementiran je i kalkulator
+                za izračunavanje defaultnih vrijednosti dnevnog unosa kalorija i nutrijenata. 
+                Osmišljen je kako bi korisniku omogućio optimiziranje (maksimizaciju ili
+                minimizaciju) značajki koje su mu bitne (npr. cijena, kalorije, željezo, itd.) na temelju odabranih namirnica i 
+                vlastitih preferencija.
             </p>
-          </div>
+            <div style="padding-top: 100px;">
+            <button type="button" class="btn btn-primary  btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa fa-info-circle"></i> Literatura
+                </button>
 
-          <div style="position: absolute; left:68%; top:-40px;">
-          <img src="{{url_for('static', filename='slike/avatar.jpg')}}" alt="avatar" style="border-radius: 50%; width: 470px; height: 450px;">
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Literatura</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <ul>
+                              <li>
+                                  <a href="https://fdc.nal.usda.gov/fdc-app.html#/">USDA - United States Department of Agriculture</a>
+                              </li>
+                              <li>
+                                  <a href="http://www.mathos.unios.hr/images/uploads/628.pdf"> I. Kuzmanović, K.Sabo, Linearno programiranje, Sveučilište Josipa Jurja Strossmayera u
+                                    Osijeku - Odjel za matematiku, 2016.</a>
+                              </li>
+                          </ul>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
+                        </div>
+                    </div>
+                    </div>
+
+              </div>
         </div>
-        <a href="{{url_for('callIndex')}}" title="Kreirajte svoj plan prehrane">
-          <img src="{{url_for('static', filename='slike/makePlan.jpg')}}" alt="makePlan" style="border-radius:50%; position: absolute; top: 115px; left:71%; width: 85px; height: 85px;">
-        </a>
-        <a href="{{url_for('callKatalog')}}" title="Nutritivne vrijednosti namirnica">
-          <img src="{{url_for('static', filename='slike/katalog.jpg')}}" alt="katalog" style="border-radius:50%; position: absolute; top: 34px; left:74%;  width: 85px; height: 85px;">
-        </a>
-        <a href="#" title="Ideje i recepti za zdrave obroke">
-          <img src="{{url_for('static', filename='slike/webIdeje.jpg')}}" alt="ideje" style="border-radius:50%; position: absolute; top: 115px; left:90%;  width: 85px; height: 85px;">
-        </a>
-        <a href="#" title="Optimalna dijeta pomoću Linearnog programiranja">
-          <img src="{{url_for('static', filename='slike/code.jpg')}}" alt="code" style="border-radius:50%; position: absolute; top: 35px; left:86.5%;  width: 85px; height: 85px;">
-        </a>
-        <a href="#" title="Prilagodi dijetu svojim željama i potrebama">
-          <img src="{{url_for('static', filename='slike/postavke.jpg')}}" alt="postavke" style="border-radius:50%; position: absolute; top: 12px; left:80%;  width: 85px; height: 85px;">
-        </a>
+
+    </div>
+
         </div>
+
+        
+
+    </div>
+
+        
        
      
         <footer class="text-center text-white"  id="zaglavlje">
@@ -153,9 +163,8 @@
           <!-- Copyright -->
         </footer>
     
-</div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="{{ url_for('static', filename='index.js') }}"></script>
 </body>

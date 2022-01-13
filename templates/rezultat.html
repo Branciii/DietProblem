@@ -28,6 +28,7 @@
                       <li><a class="dropdown-item" href="{{url_for('callIndex')}}">Početna</a></li>
                       <li><a class="dropdown-item" href="{{url_for('callCalculator')}}">Napravi plan</a></li>
                       <li><a class="dropdown-item" href="{{url_for('callKatalog')}}">Katalog namirnica</a></li>
+                      <li><a class="dropdown-item" href="{{url_for('callOnama')}}" >O nama</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -38,6 +39,7 @@
           <div id="rezultat">
 
             <div id="Uvod" style="padding-bottom: 50px; padding-top: 70px; text-align: center;">
+              <a href="{{url_for('callCalculator')}}" class="btn btn-outline-primary btn-lg" tabindex="-1" role="button" style="border-radius: 50%; position: absolute; left: 10%;"><i class="fa fa-arrow-left"></i></a>
               <h2>
                 Vaš plan prehrane:
               </h2>
@@ -70,12 +72,11 @@
               </h3>
             </div>
 
-            <div style="padding-top: 100px;">
-              <a href="{{url_for('callCalculator')}}" class="btn btn-outline-primary btn-lg" tabindex="-1" role="button"><i class="fa fa-arrow-circle-left"></i> Natrag</a>
-
+            <div style="padding-top: 20px; padding-bottom: 100px;">
+          
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-secondary  btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 1060px;">
-                  <i class="fa fa-info-circle"></i> Info 
+                <button type="button" class="btn btn-secondary  btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <i class="fa fa-info-circle"></i> Problem linearnog programiranja koji daje vaš optimalni plan 
                   </button>
 
                   <!-- Modal -->
@@ -92,7 +93,7 @@
                             {% endfor %}
                           </div>
                           <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
                           </div>
                       </div>
                       </div>

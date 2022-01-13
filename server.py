@@ -49,6 +49,10 @@ def index():
 def callIndex():
     return render_template('index.html')
 
+@app.route('/callOnama')
+def callOnama():
+    return render_template('about.html')
+
 @app.route('/callKatalog')
 def callKatalog():
     meats = x.loc[x["Kategorija"] == "MESO"][["Naziv","Kalorije","Proteini","Ugljikohidrati","Masti","Kalij", "VitaminC", "Magnezij", "Kolesterol", "Natrij", "Željezo", "Kalcij", "Količina (g)", "Cijena (kn)", "Link"]]

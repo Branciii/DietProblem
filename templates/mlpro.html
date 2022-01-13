@@ -28,6 +28,7 @@
                       <li><a class="dropdown-item" href="{{url_for('callIndex')}}">Početna</a></li>
                       <li><a class="dropdown-item" href="{{url_for('callCalculator')}}">Napravi plan</a></li>
                       <li><a class="dropdown-item" href="{{url_for('callKatalog')}}">Katalog namirnica</a></li>
+                      <li><a class="dropdown-item" href="{{url_for('callOnama')}}" >O nama</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -77,6 +78,7 @@
                                           <div class="card-body">
                                               <h4 class="card-title"> {{data[4][0][0][0]}}</h4>
                                               <h6>Kalorije:  {{data[4][0][0][1]}} </h6>
+                                              <h6>Cijena:  {{data[4][0][0][13]}} </h6>
                                               <p class="card-text">
                                                 <div class="accordion" id="accordionExample">
                                                   <div class="accordion-item">
@@ -129,6 +131,7 @@
                                           <div class="card-body">
                                               <h4 class="card-title">{{data[4][0][1][0]}}</h4>
                                               <h6>Kalorije:  {{data[4][0][1][1]}}</h6>
+                                              <h6>Cijena:  {{data[4][0][1][13]}} </h6>
                                               <p class="card-text">
                                                 <div class="accordion" id="accordionExample">
                                                   <div class="accordion-item">
@@ -180,6 +183,7 @@
                                           <div class="card-body">
                                               <h4 class="card-title">{{data[4][0][2][0]}}</h4>
                                               <h6>Kalorije: {{data[4][0][2][1]}} </h6>
+                                              <h6>Cijena:  {{data[4][0][2][13]}} </h6>
                                               <p class="card-text">
                                                 <div class="accordion" id="accordionExample">
                                                   <div class="accordion-item">
@@ -231,6 +235,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{data[4][0][3][0]}}</h4>
                                             <h6>Kalorije: {{data[4][0][3][1]}} </h6>
+                                            <h6>Cijena:  {{data[4][0][3][13]}} </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -289,6 +294,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title"> {{data[4][loop.index][0][0]}}</h4>
                                             <h6>Kalorije:  {{data[4][loop.index][0][1]}} </h6>
+                                            <h6>Cijena:  {{data[4][loop.index][0][13]}} </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -341,6 +347,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{data[4][loop.index][1][0]}}</h4>
                                             <h6>Kalorije:  {{data[4][loop.index][1][1]}}</h6>
+                                            <h6>Cijena:  {{data[4][loop.index][1][13]}} </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -392,6 +399,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{data[4][loop.index][2][0]}}</h4>
                                             <h6>Kalorije: {{data[4][loop.index][2][1]}} </h6>
+                                            <h6>Cijena:  {{data[4][loop.index][2][13]}} </h6>
                                             <p class="card-text">
                                               <div class="accordion" id="accordionExample">
                                                 <div class="accordion-item">
@@ -443,6 +451,7 @@
                                       <div class="card-body">
                                           <h4 class="card-title">{{data[4][loop.index][3][0]}}</h4>
                                           <h6>Kalorije: {{data[4][loop.index][3][1]}} </h6>
+                                          <h6>Cijena:  {{data[4][loop.index][3][13]}} </h6>
                                           <p class="card-text">
                                             <div class="accordion" id="accordionExample">
                                               <div class="accordion-item">

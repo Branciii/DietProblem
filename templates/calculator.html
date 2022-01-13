@@ -34,6 +34,7 @@
                       <li><a class="dropdown-item" href="{{url_for('callIndex')}}">Početna</a></li>
                       <li><a class="dropdown-item" href="{{url_for('callCalculator')}}">Napravi plan</a></li>
                       <li><a class="dropdown-item" href="{{url_for('callKatalog')}}">Katalog namirnica</a></li>
+                      <li><a class="dropdown-item" href="{{url_for('callOnama')}}" >O nama</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -276,7 +277,7 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Unesi</button>
                                 
                                 </div>
                             </div>
@@ -288,11 +289,11 @@
                         <p> Želite li ručno unijeti vrijednosti mikro/makro nutrijenata? </p>
                         <div class="form-check form-check-inline">
                           <input class="form-check-input" type="radio" data-bs-toggle="modal" data-bs-target="#staticBackdrop" name="option" id="inlineRadio1" value="default" onclick="Default()">
-                          <label class="form-check-label" for="inlineRadio1">Default</label>
+                          <label class="form-check-label" for="inlineRadio1">Preporučeni unos</label>
                         </div>
                         <div class="form-check form-check-inline">
                           <input class="form-check-input" type="radio" name="option" id="inlineRadio2" onclick="Custom()" value="custom" >
-                          <label class="form-check-label" for="inlineRadio2">Custom</label>
+                          <label class="form-check-label" for="inlineRadio2">Ručni unos</label>
                         </div>
 
                       
@@ -349,7 +350,7 @@
 
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Unesi</button>
       
                               </div>
                             </div>
